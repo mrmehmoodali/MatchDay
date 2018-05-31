@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "388987554457",
+    "firebase_url": "https://krypto-knowhow-cc13e.firebaseio.com",
+    "project_id": "krypto-knowhow-cc13e",
+    "storage_bucket": "krypto-knowhow-cc13e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:388987554457:android:41f0d4d3d6f49974",
+        "android_client_info": {
+          "package_name": "com.zeus.ali.webapi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "388987554457-42epam0t9e46c6prj21q7kr60a09ap5o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.zeus.ali.webapi",
+            "certificate_hash": "b4d932c94106c2d560ac91f4a4532e99cd1c3c15"
+          }
+        },
+        {
+          "client_id": "388987554457-6ng0jn9jd2itjva4bdpias4uuaoug3hj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCP_YpVIoE0vcy7_qzFcquG947c3J96jFE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "388987554457-6ng0jn9jd2itjva4bdpias4uuaoug3hj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
