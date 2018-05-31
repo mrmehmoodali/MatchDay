@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:388987554457:android:41f0d4d3d6f49974",
         "android_client_info": {
-          "package_name": "com.zeus.ali.webapi"
+          "package_name": "com.zeus.ali.matchday"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "388987554457-42epam0t9e46c6prj21q7kr60a09ap5o.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.zeus.ali.webapi",
+            "package_name": "com.zeus.ali.matchday",
             "certificate_hash": "b4d932c94106c2d560ac91f4a4532e99cd1c3c15"
           }
         },
