@@ -168,22 +168,22 @@ public class FixtureTab extends Fragment {
 
             try {
 
-                //JSONObject jsonResponse = new JSONObject(xml);
-                JSONArray jsonArray = new JSONArray(response);
+                JSONObject jsonResponse = new JSONObject(response);
+                JSONArray jsonArray = jsonResponse.getJSONArray("fixtures");
 
                 for (int i = 0; i < jsonArray.length(); i++) {
                     JSONObject jsonObject = jsonArray.getJSONObject(i);
                     HashMap<String, String> map = new HashMap<>();
-                    map.put(KEY_24H_VOLUME_INR	  , jsonObject.optString(KEY_24H_VOLUME_INR	  ));
+                    /*map.put(KEY_24H_VOLUME_INR	  , jsonObject.optString(KEY_24H_VOLUME_INR	  ));
                     map.put(KEY_24H_VOLUME_USD	  , jsonObject.optString(KEY_24H_VOLUME_USD	  ));
                     map.put(KEY_AVAILABLE_SUPPLY  , jsonObject.optString(KEY_AVAILABLE_SUPPLY));
                     map.put(KEY_ID		          , jsonObject.optString(KEY_ID		          ));
                     map.put(KEY_LAST_UPDATED	  , jsonObject.optString(KEY_LAST_UPDATED	  ));
                     map.put(KEY_MARKET_CAP_INR	  , jsonObject.optString(KEY_MARKET_CAP_INR	  ));
                     map.put(KEY_MARKET_CAP_USD	  , jsonObject.optString(KEY_MARKET_CAP_USD	  ));
-                    map.put(KEY_MAX_SUPPLY	      , jsonObject.optString(KEY_MAX_SUPPLY	      ));
+                    map.put(KEY_MAX_SUPPLY	      , jsonObject.optString(KEY_MAX_SUPPLY	      ));*/
                     map.put(AWAY_TEAM_NAME, jsonObject.optString(AWAY_TEAM_NAME));
-                    map.put(KEY_PERCENT_CHANGE_1H , jsonObject.optString(KEY_PERCENT_CHANGE_1H )+"%");
+                    /*map.put(KEY_PERCENT_CHANGE_1H , jsonObject.optString(KEY_PERCENT_CHANGE_1H )+"%");
                     //Log.e(TAG, "Percent of " + jsonObject.getInt(KEY_PERCENT_CHANGE_1H));
                     map.put(KEY_PERCENT_CHANGE_24H, jsonObject.optString(KEY_PERCENT_CHANGE_24H)+"%");
                     map.put(KEY_PERCENT_CHANGE_7D , jsonObject.optString(KEY_PERCENT_CHANGE_7D )+"%");
@@ -199,9 +199,9 @@ public class FixtureTab extends Fragment {
 
 
                     map.put(KEY_PRICE_USD	      , jsonObject.optString(KEY_PRICE_USD	      ));
-                    map.put(KEY_RANK		      , jsonObject.optString(KEY_RANK		      ));
+                    map.put(KEY_RANK		      , jsonObject.optString(KEY_RANK		      ));*/
                     map.put(HOME_TEAM_NAME, jsonObject.optString(HOME_TEAM_NAME));
-                    map.put(KEY_TOTAL_SUPPLY	  , jsonObject.optString(KEY_TOTAL_SUPPLY	  ));
+                    //map.put(KEY_TOTAL_SUPPLY	  , jsonObject.optString(KEY_TOTAL_SUPPLY	  ));
                     cryptoList.add(map);
                 }
                 /*JSONObject jsonObj = new JSONObject(response);

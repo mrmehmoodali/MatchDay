@@ -121,11 +121,11 @@ public class FixtureAdaptor extends RecyclerView.Adapter<FixtureAdaptor.ViewHold
         //YoYo.with(Techniques.FadeIn).playOn(holder.cardViewTicker);
         HashMap<String,String> map = values.get(position);
         holder.homeTeamName.setText(map.get(FixtureTab.HOME_TEAM_NAME));
-        holder.price.setText(map.get(FixtureTab.KEY_PRICE_INR));
+        //holder.price.setText(map.get(FixtureTab.KEY_PRICE_INR));
         holder.awayTeamName.setText(map.get(FixtureTab.AWAY_TEAM_NAME));
 
 
-        holder.percent1H.setText(map.get(FixtureTab.KEY_PERCENT_CHANGE_1H));
+        /*holder.percent1H.setText(map.get(FixtureTab.KEY_PERCENT_CHANGE_1H));
 
         if (map.get(FixtureTab.KEY_PERCENT_CHANGE_1H).substring(0,1).equals("-")){
             holder.percent1H.setTextColor(Color.RED);
@@ -161,7 +161,7 @@ public class FixtureAdaptor extends RecyclerView.Adapter<FixtureAdaptor.ViewHold
         holder.PRICE_USD       .setText(map.get(FixtureTab.KEY_PRICE_USD     ));
         holder.TOTAL_SUPPLY    .setText(map.get(FixtureTab.KEY_TOTAL_SUPPLY   ));
         holder.VOLUME_24INR    .setText(map.get(FixtureTab.KEY_24H_VOLUME_INR));
-        holder.VOLUME_24USD    .setText(map.get(FixtureTab.KEY_24H_VOLUME_USD     ));
+        holder.VOLUME_24USD    .setText(map.get(FixtureTab.KEY_24H_VOLUME_USD     ));*/
         //holder.imageView.setImageResource(Integer.parseInt(map.get("icon")));
         //holder.imageView.setImageResource(R.drawable.);
 
