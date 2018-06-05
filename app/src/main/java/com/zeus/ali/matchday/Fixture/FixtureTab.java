@@ -40,8 +40,8 @@ public class FixtureTab extends Fragment {
     private static final String API_URL = "http://api.football-data.org/v1/competitions/467/fixtures";
     ArrayList<HashMap<String, String>> cryptoList;
 
-    static final String KEY_24H_VOLUME_INR	           = "24h_volume_inr"
-                       ,KEY_24H_VOLUME_USD	           = "24h_volume_usd"
+    static final String GOALS_HOME_TEAM	           = "goalsHomeTeam"
+                       ,GOALS_AWAY_TEAM	           = "goalsAwayTeam"
                        ,KEY_AVAILABLE_SUPPLY	       = "available_supply"
                        ,KEY_ID		                   = "id"
                        ,KEY_LAST_UPDATED	           = "last_updated"
@@ -174,6 +174,34 @@ public class FixtureTab extends Fragment {
                 for (int i = 0; i < jsonArray.length(); i++) {
                     JSONObject jsonObject = jsonArray.getJSONObject(i);
                     HashMap<String, String> map = new HashMap<>();
+
+                    //JSONArray goalArray = jsonObject.getJSONArray("result");
+                    /*for (int j = 0; j < goalArray.length(); j++){
+                        JSONObject goalObject = goalArray.getJSONObject(j);
+                        if (goalObject.optString(GOALS_HOME_TEAM).equals(JSONObject.NULL)){
+                            map.put(GOALS_HOME_TEAM, "");
+                        }else{
+                            map.put(GOALS_HOME_TEAM, goalObject.optString(GOALS_HOME_TEAM));
+                        }
+                        if (goalObject.optString(GOALS_AWAY_TEAM).equals(JSONObject.NULL)){
+                            map.put(GOALS_AWAY_TEAM, "");
+                        }else{
+                            map.put(GOALS_AWAY_TEAM, goalObject.optString(GOALS_AWAY_TEAM));
+                        }
+
+                    }*/
+                    if (jsonObject.optString(GOALS_HOME_TEAM).equals("")){
+                        map.put(GOALS_HOME_TEAM, "0");
+                    }else{
+                        map.put(GOALS_HOME_TEAM, jsonObject.optString(GOALS_HOME_TEAM));
+                    }
+                    if (jsonObject.optString(GOALS_AWAY_TEAM).equals("")){
+                        map.put(GOALS_AWAY_TEAM, "0");
+                    }else{
+                        map.put(GOALS_AWAY_TEAM, jsonObject.optString(GOALS_AWAY_TEAM));
+                    }
+                    //map.put(GOALS_HOME_TEAM, jsonObject.optString(GOALS_HOME_TEAM));
+                    //map.put(GOALS_AWAY_TEAM, jsonObject.optString(GOALS_AWAY_TEAM));
                     /*map.put(KEY_24H_VOLUME_INR	  , jsonObject.optString(KEY_24H_VOLUME_INR	  ));
                     map.put(KEY_24H_VOLUME_USD	  , jsonObject.optString(KEY_24H_VOLUME_USD	  ));
                     map.put(KEY_AVAILABLE_SUPPLY  , jsonObject.optString(KEY_AVAILABLE_SUPPLY));
@@ -211,9 +239,9 @@ public class FixtureTab extends Fragment {
                 for(Iterator<String> iter1 = rate.keys(); iter1.hasNext();) {
                     HashMap<String, String> temp = new HashMap<>();
                     String key1 = iter1.next();
-                    Object price = rate.get(key1);
+                    Object gameTime = rate.get(key1);
                     temp.put("id", key1);
-                    temp.put("price", String.valueOf(price));
+                    temp.put("gameTime", String.valueOf(gameTime));
                     temp.put("icon", Integer.toString(icons[i]) );
                     i++;
                     //Log.i("iter", String.valueOf(i));

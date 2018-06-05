@@ -59,7 +59,7 @@ public class FixtureAdaptor extends RecyclerView.Adapter<FixtureAdaptor.ViewHold
     public class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
         public TextView homeTeamName;
-        public TextView price;
+        public TextView gameTime;
         public TextView awayTeamName;
         public TextView percent1H;
         public TextView percent24H;
@@ -72,8 +72,8 @@ public class FixtureAdaptor extends RecyclerView.Adapter<FixtureAdaptor.ViewHold
                         ,MAX_SUPPLY
                         ,PRICE_USD
                         ,TOTAL_SUPPLY
-                        ,VOLUME_24INR
-                        ,VOLUME_24USD;
+                        ,GOALS_HOME_TEAM
+                        ,GOALS_AWAY_TEAM;
 
         public ImageView imageView;
         public View layout;
@@ -85,21 +85,21 @@ public class FixtureAdaptor extends RecyclerView.Adapter<FixtureAdaptor.ViewHold
             super(v);
             layout      = v;
             homeTeamName = v.findViewById(R.id.homeTeamName);
-            price       = v.findViewById(R.id.price);
+            gameTime = v.findViewById(R.id.gameTime);
             awayTeamName = v.findViewById(R.id.awayTeamName);
             /*percent1H   = v.findViewById(R.id.per1H);
             percent24H  = v.findViewById(R.id.per24H);
             percent7D   = v.findViewById(R.id.per7day);*/
 
-            AVAILABLE_SUPPLY   = v.findViewById(R.id.AVAILABLE_SUPPLY);
+            /*AVAILABLE_SUPPLY   = v.findViewById(R.id.AVAILABLE_SUPPLY);
             LAST_UPDATED	   = v.findViewById(R.id.LAST_UPDATED	);
             MARKET_CAP_INR	   = v.findViewById(R.id.MARKET_CAP_INR	);
             MARKET_CAP_USD	   = v.findViewById(R.id.MARKET_CAP_USD	);
             MAX_SUPPLY         = v.findViewById(R.id.MAX_SUPPLY      );
             PRICE_USD          = v.findViewById(R.id.PRICE_USD       );
-            TOTAL_SUPPLY       = v.findViewById(R.id.TOTAL_SUPPLY    );
-            VOLUME_24INR       = v.findViewById(R.id.VOLUME_24INR    );
-            VOLUME_24USD       = v.findViewById(R.id.VOLUME_24USD    );
+            TOTAL_SUPPLY       = v.findViewById(R.id.TOTAL_SUPPLY    );*/
+            GOALS_HOME_TEAM       = v.findViewById(R.id.GOALS_HOME_TEAM    );
+            GOALS_AWAY_TEAM       = v.findViewById(R.id.GOALS_AWAY_TEAM    );
 
             imageView   = v.findViewById(R.id.imageView);
             cardViewTicker = v.findViewById(R.id.cardViewTicker);
@@ -151,8 +151,8 @@ public class FixtureAdaptor extends RecyclerView.Adapter<FixtureAdaptor.ViewHold
 
         String formatted = DateTimeTemplate.format(c, "%d% %MM% %DD% %hh%:%ii%");
 
-        //holder.price.setText(map.get(FixtureTab.KEY_PRICE_INR));
-        holder.price.setText(formatted);
+        //holder.gameTime.setText(map.get(FixtureTab.KEY_PRICE_INR));
+        holder.gameTime.setText(formatted);
 
 
 
@@ -192,9 +192,9 @@ public class FixtureAdaptor extends RecyclerView.Adapter<FixtureAdaptor.ViewHold
         holder.MARKET_CAP_USD  .setText(map.get(FixtureTab.KEY_MARKET_CAP_USD   ));
         holder.MAX_SUPPLY      .setText(map.get(FixtureTab.KEY_MAX_SUPPLY));
         holder.PRICE_USD       .setText(map.get(FixtureTab.KEY_PRICE_USD     ));
-        holder.TOTAL_SUPPLY    .setText(map.get(FixtureTab.KEY_TOTAL_SUPPLY   ));
-        holder.VOLUME_24INR    .setText(map.get(FixtureTab.KEY_24H_VOLUME_INR));
-        holder.VOLUME_24USD    .setText(map.get(FixtureTab.KEY_24H_VOLUME_USD     ));*/
+        holder.TOTAL_SUPPLY    .setText(map.get(FixtureTab.KEY_TOTAL_SUPPLY   ));*/
+        holder.GOALS_HOME_TEAM    .setText(map.get(FixtureTab.GOALS_HOME_TEAM));
+        holder.GOALS_AWAY_TEAM    .setText(map.get(FixtureTab.GOALS_AWAY_TEAM     ));
         //holder.imageView.setImageResource(Integer.parseInt(map.get("icon")));
         //holder.imageView.setImageResource(R.drawable.);
 
