@@ -2,5 +2,5 @@
     <string name="app_name">MatchDay</string>
     <string name="change_1hr">1 hr</string>
     <string name="change_24hr">24 hr</string>
-    <string name="ids">IDS</string>
+    <string name="homeTeamName">IDS</string>
 </resources>

@@ -1,7 +1,6 @@
 package com.zeus.ali.matchday.Fixture;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.os.Build;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.CardView;
@@ -14,10 +13,16 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.marcinorlowski.datetimetemplate.DateTimeTemplate;
 import com.zeus.ali.matchday.R;
 
+import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
+import java.util.TimeZone;
 
 /**
  * Created by Ali on 1/11/2018.
@@ -79,9 +84,9 @@ public class FixtureAdaptor extends RecyclerView.Adapter<FixtureAdaptor.ViewHold
         public ViewHolder(View v) {
             super(v);
             layout      = v;
-            homeTeamName = v.findViewById(R.id.cryptoId);
+            homeTeamName = v.findViewById(R.id.homeTeamName);
             price       = v.findViewById(R.id.price);
-            awayTeamName = v.findViewById(R.id.fullName);
+            awayTeamName = v.findViewById(R.id.awayTeamName);
             percent1H   = v.findViewById(R.id.per1H);
             percent24H  = v.findViewById(R.id.per24H);
             percent7D   = v.findViewById(R.id.per7day);
@@ -121,7 +126,18 @@ public class FixtureAdaptor extends RecyclerView.Adapter<FixtureAdaptor.ViewHold
         //YoYo.with(Techniques.FadeIn).playOn(holder.cardViewTicker);
         HashMap<String,String> map = values.get(position);
         holder.homeTeamName.setText(map.get(FixtureTab.HOME_TEAM_NAME));
+
+        TimeZone tz = TimeZone.getDefault();
+        Calendar c = new GregorianCalendar(tz);
+
+        Instant instant = Instant.parse(map.get(FixtureTab.MATCH_DATE));
+        c.setTime(Date.from(instant));
+
+        String formatted = DateTimeTemplate.format(c, "%d% %MM% %DD% %hh%:%ii%");
+
         //holder.price.setText(map.get(FixtureTab.KEY_PRICE_INR));
+        holder.price.setText(formatted);
+
         holder.awayTeamName.setText(map.get(FixtureTab.AWAY_TEAM_NAME));
 
 

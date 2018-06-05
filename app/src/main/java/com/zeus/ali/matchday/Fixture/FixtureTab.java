@@ -53,7 +53,7 @@ public class FixtureTab extends Fragment {
                        ,KEY_PERCENT_CHANGE_24H         = "percent_change_24h"
                        ,KEY_PERCENT_CHANGE_7D          = "percent_change_7d"
                        ,KEY_PRICE_BTC		           = "price_btc"
-                       ,KEY_PRICE_INR		           = "price_inr"
+                       ,MATCH_DATE		           = "date"
                        ,KEY_PRICE_USD	               = "price_usd"
                        ,KEY_RANK		               = "rank"
                        , HOME_TEAM_NAME = "homeTeamName"
@@ -193,11 +193,11 @@ public class FixtureTab extends Fragment {
                     //Log.e(TAG, "Percent of " + jsonObject.optString(KEY_PERCENT_CHANGE_7D ));
 
                     String tempPrice1 = jsonObject.optString(KEY_PRICE_INR);
-                    String tempPrice2 = tempPrice1.substring(0,tempPrice1.indexOf(".")+3);
+                    String tempPrice2 = tempPrice1.substring(0,tempPrice1.indexOf(".")+3);*/
 
-                    map.put(KEY_PRICE_INR		  , tempPrice2);
+                    map.put(MATCH_DATE, jsonObject.optString(MATCH_DATE));
 
-
+                    /*
                     map.put(KEY_PRICE_USD	      , jsonObject.optString(KEY_PRICE_USD	      ));
                     map.put(KEY_RANK		      , jsonObject.optString(KEY_RANK		      ));*/
                     map.put(HOME_TEAM_NAME, jsonObject.optString(HOME_TEAM_NAME));
