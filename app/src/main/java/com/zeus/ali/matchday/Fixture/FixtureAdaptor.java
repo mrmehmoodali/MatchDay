@@ -87,9 +87,9 @@ public class FixtureAdaptor extends RecyclerView.Adapter<FixtureAdaptor.ViewHold
             homeTeamName = v.findViewById(R.id.homeTeamName);
             price       = v.findViewById(R.id.price);
             awayTeamName = v.findViewById(R.id.awayTeamName);
-            percent1H   = v.findViewById(R.id.per1H);
+            /*percent1H   = v.findViewById(R.id.per1H);
             percent24H  = v.findViewById(R.id.per24H);
-            percent7D   = v.findViewById(R.id.per7day);
+            percent7D   = v.findViewById(R.id.per7day);*/
 
             AVAILABLE_SUPPLY   = v.findViewById(R.id.AVAILABLE_SUPPLY);
             LAST_UPDATED	   = v.findViewById(R.id.LAST_UPDATED	);
@@ -122,23 +122,40 @@ public class FixtureAdaptor extends RecyclerView.Adapter<FixtureAdaptor.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(final FixtureAdaptor.ViewHolder holder, final int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
         //YoYo.with(Techniques.FadeIn).playOn(holder.cardViewTicker);
         HashMap<String,String> map = values.get(position);
-        holder.homeTeamName.setText(map.get(FixtureTab.HOME_TEAM_NAME));
+
+        if (map.get(FixtureTab.HOME_TEAM_NAME).equals("")){
+            holder.homeTeamName.setText(R.string.TBD);
+        } else {
+            holder.homeTeamName.setText(map.get(FixtureTab.HOME_TEAM_NAME));
+        }
+
+        if (map.get(FixtureTab.AWAY_TEAM_NAME).equals("")){
+            holder.awayTeamName.setText(R.string.TBD);
+        } else {
+            holder.awayTeamName.setText(map.get(FixtureTab.AWAY_TEAM_NAME));
+        }
 
         TimeZone tz = TimeZone.getDefault();
         Calendar c = new GregorianCalendar(tz);
 
-        Instant instant = Instant.parse(map.get(FixtureTab.MATCH_DATE));
-        c.setTime(Date.from(instant));
+        Instant instant = null;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            instant = Instant.parse(map.get(FixtureTab.MATCH_DATE));
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            c.setTime(Date.from(instant));
+        }
 
         String formatted = DateTimeTemplate.format(c, "%d% %MM% %DD% %hh%:%ii%");
 
         //holder.price.setText(map.get(FixtureTab.KEY_PRICE_INR));
         holder.price.setText(formatted);
 
-        holder.awayTeamName.setText(map.get(FixtureTab.AWAY_TEAM_NAME));
+
+
 
 
         /*holder.percent1H.setText(map.get(FixtureTab.KEY_PERCENT_CHANGE_1H));

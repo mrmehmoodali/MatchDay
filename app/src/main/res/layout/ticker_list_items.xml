@@ -32,33 +32,15 @@
                 android:id="@+id/imageView"
                 android:layout_width="72dp"
                 android:layout_height="30dp"
-                android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                app:layout_constraintBottom_toTopOf="@+id/per24H"
-                app:layout_constraintEnd_toStartOf="@+id/awayTeamName"
-                app:layout_constraintStart_toEndOf="@+id/homeTeamName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@mipmap/ic_fore_versus" />
-
-            <TextView
-                android:id="@+id/per1H"
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="8dp"
-                android:textAlignment="textEnd"
-                android:textColor="#5d5d5d"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/textView"
-                app:layout_constraintTop_toBottomOf="@+id/awayTeamName"
-                tools:layout_conversion_absoluteHeight="25dp"
-                tools:layout_conversion_absoluteWidth="72dp"
-                tools:text="1hr%" />
 
             <TextView
                 android:id="@+id/awayTeamName"
@@ -93,99 +75,36 @@
                 tools:layout_conversion_absoluteWidth="101dp" />
 
             <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/change_24hr"
-                android:textSize="14sp"
-                app:layout_constraintStart_toEndOf="@+id/per1H"
-                app:layout_constraintTop_toBottomOf="@+id/homeTeamName"
-                tools:layout_conversion_absoluteHeight="25dp"
-                tools:layout_conversion_absoluteWidth="80dp" />
-
-            <TextView
                 android:id="@+id/price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
                 android:text="Time"
                 android:textAlignment="textEnd"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/textView2"
-                app:layout_constraintTop_toBottomOf="@+id/imageView"
-                app:layout_constraintVertical_bias="0.0"
-                tools:layout_conversion_absoluteHeight="40dp"
-                tools:layout_conversion_absoluteWidth="159dp"
-                tools:layout_editor_absoluteX="215dp" />
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/change_1hr"
-                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/awayTeamName"
-                tools:layout_conversion_absoluteHeight="25dp"
-                tools:layout_conversion_absoluteWidth="80dp" />
-
-            <TextView
-                android:id="@+id/per24H"
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="8dp"
-                android:textAlignment="textEnd"
-                android:textColor="#5d5d5d"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/textView2"
-                app:layout_constraintTop_toBottomOf="@+id/homeTeamName"
-                tools:layout_conversion_absoluteHeight="25dp"
-                tools:layout_conversion_absoluteWidth="72dp"
-                tools:text="24hr%" />
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="7 day"
-                android:textSize="14sp"
-                app:layout_constraintStart_toEndOf="@+id/per24H"
-                app:layout_constraintTop_toBottomOf="@+id/price" />
-
-            <TextView
-                android:id="@+id/per7day"
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="8dp"
-                android:text="7 day%"
-                android:textAlignment="textEnd"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/textView3"
-                app:layout_constraintTop_toBottomOf="@+id/price" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView"
+                tools:layout_conversion_absoluteHeight="40dp"
+                tools:layout_conversion_absoluteWidth="159dp" />
 
             <android.support.constraint.ConstraintLayout
                 android:id="@+id/constraintLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/space"
+                app:layout_constraintTop_toBottomOf="@+id/price"
                 app:layout_constraintVertical_bias="0.0">
 
                 <TextView
@@ -404,10 +323,9 @@
                 android:layout_height="0dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/per24H" />
+                tools:layout_editor_absoluteY="67dp" />
 
         </android.support.constraint.ConstraintLayout>
     </android.support.v7.widget.CardView>
