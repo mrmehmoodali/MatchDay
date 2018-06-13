@@ -23,7 +23,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="scalingPercent" value="98" />
+                                                <entry key="scalingPercent" value="85" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -33,12 +33,7 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="backgroundLayerName" value="ic_fore_background" />
-                                      <entry key="foregroundImage" value="C:\Users\Ali\Desktop\versus.png" />
-                                      <entry key="foregroundLayerName" value="ic_fore_versus" />
-                                      <entry key="legacyIconShape" value="CIRCLE" />
-                                      <entry key="outputName" value="ic_versus" />
-                                      <entry key="webIconShape" value="CIRCLE" />
+                                      <entry key="foregroundImage" value="C:\Users\Ali\Desktop\world-cup.png" />
                                     </map>
                                   </option>
                                 </PersistentState>

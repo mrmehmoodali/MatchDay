@@ -18,8 +18,8 @@ public class MainActivity extends AppCompatActivity {
     SlidingTabLayout tabs;
     //long lastPress;
     //Toast backpressToast;
-    CharSequence Titles[]={"Fixtures","League"};
-    int Numboftabs =2;
+    CharSequence Titles[]={" WORLD CUP Fixtures"};
+    int Numboftabs =1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
