@@ -16,6 +16,8 @@ import android.widget.TextView;
 import com.marcinorlowski.datetimetemplate.DateTimeTemplate;
 import com.zeus.ali.matchday.R;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -138,22 +140,22 @@ public class FixtureAdaptor extends RecyclerView.Adapter<FixtureAdaptor.ViewHold
             holder.awayTeamName.setText(map.get(FixtureTab.AWAY_TEAM_NAME));
         }
 
-        TimeZone tz = TimeZone.getDefault();
-        Calendar c = new GregorianCalendar(tz);
+        //TimeZone tz = TimeZone.getDefault();
+        //Calendar c = new GregorianCalendar(tz);
 
-        Instant instant = null;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            instant = Instant.parse(map.get(FixtureTab.MATCH_DATE));
-        }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            c.setTime(Date.from(instant));
-        }
+        //Instant instant = null;
+        //if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        //    instant = Instant.parse(map.get(FixtureTab.MATCH_DATE));
 
-        String formatted = DateTimeTemplate.format(c, "%d% %MM% %DD% %hh%:%ii%");
+        //if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        //c.setTime(new Date(map.get(FixtureTab.MATCH_DATE)));
+
+
+        //String formatted = DateTimeTemplate.format(c, "%d% %MM% %DD% %hh%:%ii%");
 
         //holder.gameTime.setText(map.get(FixtureTab.KEY_PRICE_INR));
-        holder.gameTime.setText(formatted);
-
+        //holder.gameTime.setText(formatted);
+        holder.gameTime.setText(getDate(map.get(FixtureTab.MATCH_DATE)));
 
 
 
@@ -263,5 +265,25 @@ public class FixtureAdaptor extends RecyclerView.Adapter<FixtureAdaptor.ViewHold
         } else {
             return diff / DAY_MILLIS + " days ago";
         }
+    }
+    private String getDate(String ourDate)
+    {
+        try
+        {
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+            formatter.setTimeZone(TimeZone.getTimeZone("GMT"));
+            Date value = formatter.parse(ourDate);
+
+            SimpleDateFormat dateFormatter = new SimpleDateFormat("EEE MMM d h:mm a"); //this format changeable
+            dateFormatter.setTimeZone(TimeZone.getDefault());
+            ourDate = dateFormatter.format(value);
+
+            //Log.d("ourDate", ourDate);
+        }
+        catch (Exception e)
+        {
+            ourDate = "00-00-0000 00:00";
+        }
+        return ourDate;
     }
 }
